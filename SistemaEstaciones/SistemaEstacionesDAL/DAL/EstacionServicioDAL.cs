@@ -57,7 +57,7 @@ namespace SistemaEstacionesDAL.DAL
             },
             new EstacionServicio()
             {
-                Region = "Región de La Araucaní"
+                Region = "Región de La Araucanía"
             },
             new EstacionServicio()
             {

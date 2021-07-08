@@ -12,11 +12,10 @@
         <div class="card-body">
             <!--ID -->
             <div class="form-group">
-                <label for="idEstacionNumb">Id de estacion:</label>
+                <label for="idEstacionNumb" >Id de estacion:</label>
                 <asp:TextBox ID="idEstacionNumb" runat="server" CssClass="form-control"></asp:TextBox>
             </div>
             
-
              <!--REGION -->
             <div class="form-group">
                 <label for="regionDdl">Region</label>
@@ -35,6 +34,12 @@
                 <asp:TextBox ID="capNumb" runat="server" CssClass="form-control"></asp:TextBox>
             </div>
              <!--HORARIOATENCION-->
+             <div class="form-group">
+                <label for="capNumb">Capacidad Maxima:</label>
+                <asp:Calendar runat="server"></asp:Calendar>
+
+            </div>
+
         
         </div>
         <asp:Button ID="ingresarBtn" runat="server" Text="Ingresar estacion." CssClass="btn btn-dark" OnClick="ingresarBtn_Click" />

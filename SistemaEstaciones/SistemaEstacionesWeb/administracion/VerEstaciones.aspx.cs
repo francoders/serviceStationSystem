@@ -30,6 +30,12 @@ namespace SistemaEstacionesWeb.administracion
 
         protected void estacionesGrid_RowCommand(object sender, GridViewCommandEventArgs e)
         {
+            if (e.CommandName == "eliminar")
+            {
+                String idEliminar = e.CommandArgument.ToString();
+                estacionServicioDAL.Remove(Convert.ToInt32(idEliminar));
+                CargarTabla(estacionServicioDAL.GetAll());
+            }
 
         }
     }

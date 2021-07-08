@@ -25,9 +25,11 @@ namespace SistemaEstacionesWeb.administracion
 
         protected void ingresarBtn_Click(object sender, EventArgs e)
         {
-            int idEstacion = Convert.ToInt32(idEstacionNumb);
+            if (Page.IsValid)
+            {
+            int idEstacion = Convert.ToInt32(Convert.ToString(idEstacionNumb));
             String direccion = DireccionTxt.Text.Trim();
-            String region = regionDdl.Text.Trim();
+            String region = regionDdl.Text;
             int capacidadMax = Convert.ToInt32(capNumb);
 
             EstacionServicio es = new EstacionServicio();
@@ -40,6 +42,9 @@ namespace SistemaEstacionesWeb.administracion
             alertIngreso.Text = "Estacion Agregada con exito!";
             limpiarFormulario();
 
+
+            }
+          
 
         }
 
