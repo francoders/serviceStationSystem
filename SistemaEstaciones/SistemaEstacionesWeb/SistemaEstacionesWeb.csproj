@@ -73,6 +73,7 @@
     <Content Include="administracion\VerPuntoCargas.aspx" />
     <Content Include="estilos\Style.css" />
     <Content Include="Default.aspx" />
+    <Content Include="js\regions.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
