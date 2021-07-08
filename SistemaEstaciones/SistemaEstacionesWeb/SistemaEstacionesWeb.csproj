@@ -71,9 +71,7 @@
     <Content Include="administracion\AgregarPuntoCarga.aspx" />
     <Content Include="administracion\VerEstaciones.aspx" />
     <Content Include="administracion\VerPuntoCargas.aspx" />
-    <Content Include="estilos\Style.css" />
     <Content Include="Default.aspx" />
-    <Content Include="js\regions.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -132,7 +130,12 @@
     </None>
     <Content Include="Web.sitemap" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\SistemaEstacionesDAL\SistemaEstacionesDAL.csproj">
+      <Project>{c90acedf-9949-4365-a755-756587f1684d}</Project>
+      <Name>SistemaEstacionesDAL</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

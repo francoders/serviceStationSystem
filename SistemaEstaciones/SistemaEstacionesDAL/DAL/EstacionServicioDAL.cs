@@ -4,11 +4,74 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SistemaEstacionesDAL
+namespace SistemaEstacionesDAL.DAL
 {
     public class EstacionServicioDAL
     {
-        private static List<EstacionServicio> estaciones = new List<EstacionServicio>();
+
+        private static List<EstacionServicio> estaciones = new List<EstacionServicio>()
+        {
+            new EstacionServicio()
+            {
+                Region = "Región de Arica y Parinacota"
+            },
+            new EstacionServicio()
+            {
+                Region = "Región de Tarapacá"
+            },
+            new EstacionServicio()
+            {
+                Region = "Región de Antofagasta"
+            },
+            new EstacionServicio()
+            {
+                Region = "Región de Atacama"
+            },
+            new EstacionServicio()
+            {
+                Region = "Región de Coquimbo"
+            },
+            new EstacionServicio()
+            {
+                Region = "Región de Valparaíso"
+            },
+            new EstacionServicio()
+            {
+                Region = "Región Metropolitana de Santiago"
+            },
+            new EstacionServicio()
+            {
+                Region = "Región del Libertador General Bernardo O’Higgins"
+            },
+            new EstacionServicio()
+            {
+                Region = "Región del Maule"
+            },
+            new EstacionServicio()
+            {
+                Region = "Región del Ñuble"
+            },
+            new EstacionServicio()
+            {
+                Region = "Región del Biobío"
+            },
+            new EstacionServicio()
+            {
+                Region = "Región de La Araucaní"
+            },
+            new EstacionServicio()
+            {
+                Region = "Región de Los Ríos"
+            },
+            new EstacionServicio()
+            {
+                Region = "Región de Los Lagos"
+            },
+            new EstacionServicio()
+            {
+                Region = "Región de Aysén del General Carlos Ibáñez del Campo"
+            },
+        };
 
         public void Add(EstacionServicio es) //Agregar Estacion
         {
@@ -31,7 +94,6 @@ namespace SistemaEstacionesDAL
         {
             return estaciones.FindAll(es => es.IdEstacionServicio == idEstacionServicio);
         }
-
 
     }
 }
