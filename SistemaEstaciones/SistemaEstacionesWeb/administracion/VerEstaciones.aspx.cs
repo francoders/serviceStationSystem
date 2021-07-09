@@ -33,7 +33,7 @@ namespace SistemaEstacionesWeb.administracion
             if (e.CommandName == "eliminar")
             {
                 String idEliminar = e.CommandArgument.ToString();
-                estacionServicioDAL.Remove(Convert.ToInt32(idEliminar));
+                estacionServicioDAL.Remove(idEliminar);
                 CargarTabla(estacionServicioDAL.GetAll());
             }
 

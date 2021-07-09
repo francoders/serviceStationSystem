@@ -83,14 +83,14 @@ namespace SistemaEstacionesDAL.DAL
             return estaciones;
         }
 
-        public void Remove(int idEstacionServicio) //Remover Estacion
+        public void Remove(String idEstacionServicio) //Remover Estacion
         {
             EstacionServicio estacionServicio = estaciones.Find(es => es.IdEstacionServicio == idEstacionServicio);
             estaciones.Remove(estacionServicio);
         }
 
 
-        public List<EstacionServicio> GetAll(int idEstacionServicio) //Filtro
+        public List<EstacionServicio> GetAll(String idEstacionServicio) //Filtro
         {
             return estaciones.FindAll(es => es.IdEstacionServicio == idEstacionServicio);
         }

@@ -11,6 +11,7 @@ namespace SistemaEstacionesWeb.administracion
 {
     public partial class AgregarEstacion : System.Web.UI.Page
     {
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -27,10 +28,14 @@ namespace SistemaEstacionesWeb.administracion
         {
             if (Page.IsValid)
             {
-            int idEstacion = Convert.ToInt32(Convert.ToString(idEstacionNumb));
-            String direccion = DireccionTxt.Text.Trim();
-            String region = regionDdl.Text;
-            int capacidadMax = Convert.ToInt32(capNumb);
+
+                String idEstacion = idEstacionNumb.Text.Trim();
+                String direccion = DireccionTxt.Text.Trim();
+                String region = regionDdl.Text;
+
+                int capNumb = '0';
+                int capacidadMax = Convert.ToInt32(capNumb);
+            
 
             EstacionServicio es = new EstacionServicio();
 
@@ -38,20 +43,32 @@ namespace SistemaEstacionesWeb.administracion
             es.Direccion = direccion;
             es.Region = region;
             es.CapacidadMax = capacidadMax;
+
             new EstacionServicioDAL().Add(es);
+
             alertIngreso.Text = "Estacion Agregada con exito!";
             limpiarFormulario();
-
-
+                
             }
           
 
         }
 
+        private void onlyNumbers(object sender, ConsoleKey e)
+        {
+            //valida solo numeros
+            if (System.Text.RegularExpressions.Regex.IsMatch(idEstacionNumb.Text,"[0-1000]"))
+            {
+                idEstacionNumb.Text = "";
+            }
+        }
+
         private void limpiarFormulario()
         {
-
+            idEstacionNumb.Text = " ";
+            DireccionTxt.Text = " ";
 
         }
+
     }
 }

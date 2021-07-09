@@ -31,11 +31,11 @@
             <!--CAPACIDAD-->
             <div class="form-group">
                 <label for="capNumb">Capacidad Maxima:</label>
-                <asp:TextBox ID="capNumb" runat="server" CssClass="form-control"></asp:TextBox>
+                <asp:TextBox ID="capNumb" runat="server" CssClass="form-control" ></asp:TextBox>
             </div>
              <!--HORARIOATENCION-->
              <div class="form-group">
-                <label for="capNumb">Capacidad Maxima:</label>
+                <label for="fecha_esta">fecha:</label>
                 <asp:Calendar runat="server"></asp:Calendar>
 
             </div>

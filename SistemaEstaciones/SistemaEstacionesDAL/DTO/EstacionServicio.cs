@@ -8,13 +8,13 @@ namespace SistemaEstacionesDAL
 {
     public class EstacionServicio
     {
-        private int idEstacionServicio;
+        private String idEstacionServicio;
         private String direccion;
         private String region;
         private int capacidadMax;
         private String horarioAtencion;
 
-        public int IdEstacionServicio { get => idEstacionServicio; set => idEstacionServicio = value; }
+        public String IdEstacionServicio { get => idEstacionServicio; set => idEstacionServicio = value; }
         public string Direccion { get => direccion; set => direccion = value; }
         public string Region { get => region; set => region = value; }
         public int CapacidadMax { get => capacidadMax; set => capacidadMax = value; }
