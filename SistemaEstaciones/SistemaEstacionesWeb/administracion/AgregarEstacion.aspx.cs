@@ -18,11 +18,20 @@ namespace SistemaEstacionesWeb.administracion
             {
                 List<EstacionServicio> estaciones = new EstacionServicioDAL().GetAll();
                 regionDdl.DataSource = estaciones;
+                //rellena la drp list
                 regionDdl.DataTextField = "Region";
+                // <option> .... </option>
+                regionDdl.DataValueField = "CodRegion";
+                // <option value='1'> .... </option>
                 regionDdl.DataBind();
             }
 
         }
+
+        //provincias
+
+        //comunas
+
 
         protected void ingresarBtn_Click(object sender, EventArgs e)
         {
@@ -31,8 +40,8 @@ namespace SistemaEstacionesWeb.administracion
 
                 String idEstacion = idEstacionNumb.Text.Trim();
                 String direccion = DireccionTxt.Text.Trim();
-                String region = regionDdl.Text;
-
+                String codigoRegion = regionDdl.SelectedValue;
+                        
                 int capNumb = '0';
                 int capacidadMax = Convert.ToInt32(capNumb);
             
@@ -41,7 +50,7 @@ namespace SistemaEstacionesWeb.administracion
 
             es.IdEstacionServicio = idEstacion;
             es.Direccion = direccion;
-            es.Region = region;
+            es.CodRegion = codigoRegion;
             es.CapacidadMax = capacidadMax;
 
             new EstacionServicioDAL().Add(es);

@@ -13,63 +13,78 @@ namespace SistemaEstacionesDAL.DAL
         {
             new EstacionServicio()
             {
-                Region = "Región de Arica y Parinacota"
+                Region = "Región de Arica y Parinacota",
+                CodRegion = "Re-01"
             },
             new EstacionServicio()
             {
-                Region = "Región de Tarapacá"
+                Region = "Región de Tarapacá",
+                CodRegion = "Re-02"
             },
             new EstacionServicio()
             {
-                Region = "Región de Antofagasta"
+                Region = "Región de Antofagasta",
+                CodRegion = "Re-03"
             },
             new EstacionServicio()
             {
-                Region = "Región de Atacama"
+                Region = "Región de Atacama",
+                CodRegion = "Re-04"
             },
             new EstacionServicio()
             {
-                Region = "Región de Coquimbo"
+                Region = "Región de Coquimbo",
+                CodRegion = "Re-05"
             },
             new EstacionServicio()
             {
-                Region = "Región de Valparaíso"
+                Region = "Región de Valparaíso",
+                CodRegion = "Re-06"
             },
             new EstacionServicio()
             {
-                Region = "Región Metropolitana de Santiago"
+                Region = "Región Metropolitana de Santiago",
+                CodRegion = "Re-07"
             },
             new EstacionServicio()
             {
-                Region = "Región del Libertador General Bernardo O’Higgins"
+                Region = "Región del Libertador General Bernardo O’Higgins",
+                CodRegion = "Re-08"
             },
             new EstacionServicio()
             {
-                Region = "Región del Maule"
+                Region = "Región del Maule",
+                CodRegion = "Re-09"
             },
             new EstacionServicio()
             {
-                Region = "Región del Ñuble"
+                Region = "Región del Ñuble",
+                CodRegion = "Re-10"
             },
             new EstacionServicio()
             {
-                Region = "Región del Biobío"
+                Region = "Región del Biobío",
+                CodRegion = "Re-11"
             },
             new EstacionServicio()
             {
-                Region = "Región de La Araucanía"
+                Region = "Región de La Araucanía",
+                CodRegion = "Re-12"
             },
             new EstacionServicio()
             {
-                Region = "Región de Los Ríos"
+                Region = "Región de Los Ríos",
+                CodRegion = "Re-13"
             },
             new EstacionServicio()
             {
-                Region = "Región de Los Lagos"
+                Region = "Región de Los Lagos",
+                CodRegion = "Re-14"
             },
             new EstacionServicio()
             {
-                Region = "Región de Aysén del General Carlos Ibáñez del Campo"
+                Region = "Región de Aysén del General Carlos Ibáñez del Campo",
+                CodRegion = "Re-15"
             },
         };
 

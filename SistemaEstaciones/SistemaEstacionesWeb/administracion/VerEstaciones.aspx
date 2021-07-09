@@ -9,13 +9,15 @@
             <Columns>
                 <asp:BoundField HeaderText="Id de estacion" DataField="IdEstacionServicio" />
                 <asp:BoundField HeaderText="Direccion" DataField="Direccion" />
-                <asp:BoundField HeaderText="Region" DataField="Region" />
+                <asp:BoundField HeaderText="Region" DataField="CodRegion" />
                 <asp:BoundField HeaderText="Capacidad" DataField="CapacidadMax" />
+
                 <asp:TemplateField>
                     <ItemTemplate>
                         <asp:Button  CssClass="btn btn-danger" ID="Button1" runat="server" Text="Eliminar" CommandName="eliminar" />                      
                     </ItemTemplate>
                 </asp:TemplateField>
+
             </Columns>
 
         </asp:GridView>
