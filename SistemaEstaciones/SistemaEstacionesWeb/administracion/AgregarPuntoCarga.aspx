@@ -1,33 +1,40 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Principal.Master" AutoEventWireup="true" CodeBehind="AgregarPuntoCarga.aspx.cs" Inherits="SistemaEstacionesWeb.administracion.AgregarPuntoCarga" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-
-    <h1 class="text-center bg-primary">Agregar Punto Carga</h1>
-
     <div class="container">
         <div class="card">
+            <div class="card-header bg-light text-dark">
+                Agregar Punto Carga
+            </div>
             <div class="card-body">
-                <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label">Tipo</label>
-                    <input type="text" class="form-control" id="tipoTxt" aria-describedby="tipo">
+                <!-- ID PUNTO DE CARGA-->
+                 <div class="form-group">
+                    <label for="idPc">Id del Punto de Carga:</label>
+                    <asp:TextBox ID="idPc" runat="server" CssClass="form-control"></asp:TextBox>
                 </div>
-
-                <div class="mb-3">
-                    <label for="exampleInputPassword1" class="form-label">Capacidad Maxima de Vehiculos</label>
-                    <input type="text" class="form-control" id="capMaxVehiculos">
+                <!-- Tipo ELECTRICO/DUAL -->
+                <div class="form-group">
+                <label for="tipoRbl">Tipo:</label>
+                    <asp:RadioButtonList ID="tipoRbl" runat="server" CssClass="form-control">
+                    <asp:ListItem Value="1" Text="Dual"></asp:ListItem>
+                    <asp:ListItem Value="2" Text="Electrico"></asp:ListItem>
+                </asp:RadioButtonList>
                 </div>
-
-                <div class="mb-3">
-                    <label for="exampleInputPassword1" class="form-label">Estado Sensores</label>
-                    <input type="text" class="form-control" id="estadoSensoresTxt">
+                <!-- VIDA UTIL -->
+                <div class="form-group">
+                    <label for="fecha_pc">fecha de reemplazo:</label>
+                    <asp:Calendar runat="server"></asp:Calendar>
+                </div>
+                <!-- Capacidad Punto de carga -->
+                <div class="form-group">
+                    <label for="capMax">Capacidad maxima de vehiculos:</label>
+                    <asp:TextBox ID="capMax" runat="server" CssClass="form-control"></asp:TextBox>
                 </div>
             </div>
+            
+            <asp:Button ID="ingresarPuntoBtn" runat="server" Text="Ingresar estacion." CssClass="btn btn-dark" OnClick="ingresarPuntoBtn_Click" />
 
-            <div class="card-footer">
-                <button type="submit" class="btn btn-primary">Agregar Punto Carga</button>
-            </div>
         </div>
-
     </div>
 
 

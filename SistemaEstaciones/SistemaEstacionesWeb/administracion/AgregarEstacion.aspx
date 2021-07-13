@@ -38,7 +38,6 @@
                 <div class="form-group">
                     <label for="fecha_esta">fecha:</label>
                     <asp:Calendar runat="server"></asp:Calendar>
-
                 </div>
 
 
