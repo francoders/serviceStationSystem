@@ -43,8 +43,10 @@
   <ItemGroup>
     <Compile Include="DAL\EstacionServicioDAL.cs" />
     <Compile Include="DAL\PuntoCargaDAL.cs" />
+    <Compile Include="DAL\RegionesDAL.cs" />
     <Compile Include="DTO\EstacionServicio.cs" />
     <Compile Include="DTO\PuntoCarga.cs" />
+    <Compile Include="DTO\Region.cs" />
     <Compile Include="Partials\PuntoCargaPartial.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

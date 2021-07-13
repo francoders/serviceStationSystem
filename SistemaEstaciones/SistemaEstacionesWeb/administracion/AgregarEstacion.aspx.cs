@@ -16,12 +16,12 @@ namespace SistemaEstacionesWeb.administracion
         {
             if (!IsPostBack)
             {
-                List<EstacionServicio> estaciones = new EstacionServicioDAL().GetAll();
-                regionDdl.DataSource = estaciones;
-                //rellena la drp list
-                regionDdl.DataTextField = "Region";
+                List<Region> regiones = new RegionesDAL().GetAll();
+                regionDdl.DataSource = regiones;
+                //rellena la lista regiones
+                regionDdl.DataTextField = "NombreRegion";
                 // <option> .... </option>
-                regionDdl.DataValueField = "CodRegion";
+                regionDdl.DataValueField = "CodigoRegion";
                 // <option value='1'> .... </option>
                 regionDdl.DataBind();
             }
