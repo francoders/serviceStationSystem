@@ -4,7 +4,7 @@
 
 
     <div class="container text-center">
-        <div class="col-lg-12 col-md-6 col-sm-12">
+        <div id="divMenu" class="col-lg-8 col-md-6 col-sm-12">
             <div class="card mx-auto text-center">
                 <div class="card-header text-center bg-info">
                     <img class="img-icon" src="img/icon.png" alt="alternative Text" />
