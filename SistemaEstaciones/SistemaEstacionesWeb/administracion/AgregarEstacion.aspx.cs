@@ -44,22 +44,18 @@ namespace SistemaEstacionesWeb.administracion
              int capacidadMax = Convert.ToInt32(capNumb);
 
             string sMensaje = 
-                "Se detectaron los siguientes errores:" +
-                "\n" +
-                "\n";
+                "Se detectaron los siguientes errores:" + "<br>";
             bool bError = false;
 
             if (string.IsNullOrWhiteSpace(idEstacionNumb.Text))
             {
-                sMensaje += "Id vacio" +
-                    "\n";
+                sMensaje += "Id vacio" + "<br>";
                 bError = true;
             }
             
             if (string.IsNullOrWhiteSpace(DireccionTxt.Text))
             {
-                sMensaje += "Direccion vacia" +
-                    "\n";
+                sMensaje += "Direccion vacia" + "<br>";
                 bError = true;
             }
 

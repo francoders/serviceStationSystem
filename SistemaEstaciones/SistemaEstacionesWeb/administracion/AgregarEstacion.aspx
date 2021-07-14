@@ -7,8 +7,8 @@
 
     <div class="container">
         <div class="card">
-            <div class="card-header bg-dark text-white">
-                Ingresar nueva Estacion de servicio
+            <div class="card-header bg-info text-dark text-center">
+                Ingresar Estacion de servicio
             </div>
             <div class="card-body">
                 <!--ID -->
@@ -44,7 +44,7 @@
             </div>
             <asp:Button ID="ingresarBtn" runat="server" Text="Ingresar estacion." CssClass="btn btn-dark" OnClick="ingresarBtn_Click" />
             <div>
-                <asp:Label ID="alertIngreso" runat="server" CssClass="text-success h1"></asp:Label>
+                <asp:Label ID="alertIngreso" runat="server" CssClass="text-success h3"></asp:Label>
             </div>
         </div>
 

@@ -22,9 +22,9 @@
            
                 <Columns>
                     <asp:BoundField HeaderText="Id Punto de Carga" DataField="IdPuntoCarga" />
-                    <asp:BoundField HeaderText="Tipo" DataField="TipoTxt" />
+                    <asp:BoundField HeaderText="Tipo" DataField="Tipo" />
                     <asp:BoundField HeaderText="Capacidad Maxima" DataField="CapacidadMaxVehiculos" />
-                    <asp:BoundField HeaderText="Fecha de reemplazo" DataField="EstadoSensores" />
+                    <asp:BoundField HeaderText="Fecha de reemplazo" DataField="FechaReemplazo" />
 
                     <asp:TemplateField>
                         <ItemTemplate>

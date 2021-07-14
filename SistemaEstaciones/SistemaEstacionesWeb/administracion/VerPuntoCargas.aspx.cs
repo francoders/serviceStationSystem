@@ -13,9 +13,9 @@ namespace SistemaEstacionesWeb.administracion
     {
         PuntoCargaDAL puntoCargaDAL = new PuntoCargaDAL();
 
-        private void CargarTabla(List<PuntoCarga> puntos)
+        private void CargarTabla(List<PuntoCarga> puntoCargas)
         {
-            pcGrid.DataSource = puntos;
+            pcGrid.DataSource = puntoCargas;
             pcGrid.DataBind();
         }
 

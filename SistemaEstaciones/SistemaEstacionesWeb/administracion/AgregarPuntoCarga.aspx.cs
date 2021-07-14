@@ -13,26 +13,30 @@ namespace SistemaEstacionesWeb.administracion
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack)
+            {
+                Calendar1.Visible = false;
+            }
         }
 
         protected void ingresarPuntoBtn_Click(object sender, EventArgs e)
         {
             if(Page.IsValid)
             {
-                String idPuntos = idPc.Text.Trim();
-                int tipo = Convert.ToInt32(tipoRbl.SelectedValue);
+                String idPuntoCarga = idPc.Text.Trim();
+                Int32 tipo = Convert.ToInt32(tipoRbl.SelectedValue);
+                Int32 CapacidadMax = Convert.ToInt32(capMax.Text.Trim());
+                String fechaCaducidad = TextBoxRecibeFecha.Text.Trim();
 
-                int capMax = '0';
-                int CapacidadM = Convert.ToInt32(capMax);
 
                 PuntoCarga pc = new PuntoCarga();
-                pc.IdPuntoCarga = idPuntos;
+                pc.IdPuntoCarga = idPuntoCarga;
                 pc.Tipo = tipo;
-                pc.CapacidadMaxVehiculos = CapacidadM;
+                pc.CapacidadMaxVehiculos = CapacidadMax;
+                pc.FechaReemplazo = fechaCaducidad;
 
                 new PuntoCargaDAL().Add(pc);
-
+                alertRegistroPuntos.Text = "Punto de Carga Agregado con exito!";
                 limpiarFormulario();
             }
         }
@@ -42,6 +46,25 @@ namespace SistemaEstacionesWeb.administracion
             idPc.Text = "";
             tipoRbl.SelectedIndex = 0;
             capMax.Text = "";
+        }
+
+        protected void Calendar1_SelectionChanged(object sender, EventArgs e)
+        {
+            TextBoxRecibeFecha.Text = Calendar1.SelectedDate.ToLongDateString();
+            Calendar1.Visible = false;
+        }
+
+        protected void ImageButtonCalendario_Click(object sender, ImageClickEventArgs e)
+        {
+            // (IMG) Al hacer Click el calendario se muestra
+            if (Calendar1.Visible)
+            {
+                Calendar1.Visible = false;
+            }
+            else
+            {
+                Calendar1.Visible = true;
+            }   
         }
     }
 }

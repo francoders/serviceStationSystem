@@ -73,6 +73,7 @@
     <Content Include="administracion\VerPuntoCargas.aspx" />
     <Content Include="css\StylePrincipal.css" />
     <Content Include="Default.aspx" />
+    <Content Include="img\calendario.png" />
     <Content Include="img\card-fondo.jpg" />
     <Content Include="img\icon.png" />
     <Content Include="Web.config" />
