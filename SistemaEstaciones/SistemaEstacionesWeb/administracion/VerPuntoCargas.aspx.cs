@@ -31,8 +31,8 @@ namespace SistemaEstacionesWeb.administracion
         {
             if(e.CommandName == "eliminar")
             {
-                string idEliminar = e.CommandArgument.ToString();
-                puntoCargaDAL.Remove(idEliminar);
+                string idPuntoCarga = e.CommandArgument.ToString();
+                puntoCargaDAL.Remove(idPuntoCarga);
                 CargarTabla(puntoCargaDAL.GetAll());
             }
         }
@@ -45,13 +45,18 @@ namespace SistemaEstacionesWeb.administracion
             CargarTabla(filtrar);
         }
 
-        protected void tchx_CheckedChanged(object sender, EventArgs e)
+        protected void TiposCheckedChanged(object sender, EventArgs e)
         {
             tipoDdl.Enabled = !tchx.Checked;
             if (tchx.Checked)
             {
                 CargarTabla(puntoCargaDAL.GetAll());
             }
+        }
+
+        protected void pcGrid_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

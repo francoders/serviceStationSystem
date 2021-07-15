@@ -29,70 +29,27 @@ namespace SistemaEstacionesWeb.administracion
 
         }
 
-        //provincias
-
-        //comunas
-
 
         protected void ingresarBtn_Click(object sender, EventArgs e)
         {
-             String idEstacion = idEstacionNumb.Text.Trim();
-             String direccion = DireccionTxt.Text.Trim();
-             String codigoRegion = regionDdl.SelectedValue;
-                        
-             int capNumb = '0';
-             int capacidadMax = Convert.ToInt32(capNumb);
-
-            string sMensaje = 
-                "Se detectaron los siguientes errores:" + "<br>";
-            bool bError = false;
-
-            if (string.IsNullOrWhiteSpace(idEstacionNumb.Text))
-            {
-                sMensaje += "Id vacio" + "<br>";
-                bError = true;
-            }
+            String idEstacion = idEstacionNumb.Text.Trim();
+            String direccion = DireccionTxt.Text.Trim();
+            String codigoRegion = regionDdl.SelectedValue;
+            int capNumb = '0';
+            Int32 capacidadMax = Convert.ToInt32(capNumb);
             
-            if (string.IsNullOrWhiteSpace(DireccionTxt.Text))
-            {
-                sMensaje += "Direccion vacia" + "<br>";
-                bError = true;
-            }
+            EstacionServicio es = new EstacionServicio();
 
-            if (capNumb <= '0')
-            {
-                sMensaje += "la capacidad minima es 1" +
-                    "\n";
-                bError = true;
-            }
+            es.IdEstacionServicio = idEstacion;
+            es.Direccion = direccion;
+            es.CodRegion = codigoRegion;
+            es.CapacidadMax = capacidadMax;
 
-            // if (string.IsNullOrWhiteSpace(dateFecha.Text))
-            // {
-            //    sMensaje += "Fecha vacia\n";
-            //    bError = true;
-            // }
+            new EstacionServicioDAL().Add(es);
 
+            alertIngreso.Text = "Estacion Agregada con exito!";
+            limpiarFormulario();
 
-            if (bError)
-            {
-                alertIngreso.Text = (sMensaje);
-            }
-            else
-            {
-          
-                EstacionServicio es = new EstacionServicio();
-
-                es.IdEstacionServicio = idEstacion;
-                es.Direccion = direccion;
-                es.CodRegion = codigoRegion;
-                es.CapacidadMax = capacidadMax;
-
-                new EstacionServicioDAL().Add(es);
-
-                alertIngreso.Text = "Estacion Agregada con exito!";
-                limpiarFormulario();
-            }
-            
         }
 
         private void onlyNumbers(object sender,EventArgs e)

@@ -8,22 +8,22 @@ namespace SistemaEstacionesDAL.DAL
 {
     public class PuntoCargaDAL
     {
-        private static List<PuntoCarga> puntos = new List<PuntoCarga>();
+        private static List<PuntoCarga> puntoCargas = new List<PuntoCarga>();
 
         public void Add(PuntoCarga pc) //agrega pc
         {
-            puntos.Add(pc);
+            puntoCargas.Add(pc);
         }
 
         public List<PuntoCarga> GetAll() //mostrar puntos
         {
-            return puntos;
+            return puntoCargas;
         }
 
         public void Remove(String idPuntoCarga) //remover punto
         {
-            PuntoCarga puntoCarga = puntos.Find(pc => pc.IdPuntoCarga == idPuntoCarga);
-            puntos.Remove(puntoCarga);
+            PuntoCarga puntoCarga = puntoCargas.Find(pc => pc.IdPuntoCarga == idPuntoCarga);
+            puntoCargas.Remove(puntoCarga);
         }
 
         public void Update(String idPuntoCarga) //actualizar punto
@@ -33,7 +33,7 @@ namespace SistemaEstacionesDAL.DAL
 
         public List<PuntoCarga> GetAll(int tipo) //filtro
         {
-            return puntos.FindAll(pc => pc.Tipo == tipo);
+            return puntoCargas.FindAll(pc => pc.Tipo == tipo);
         }
     }
 }

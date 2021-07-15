@@ -5,15 +5,15 @@
         <asp:Label ID="mensajeLbl" CssClass="text-success h1" runat="server"></asp:Label>
     </div>
 
-    <div class="container">
+    <div class="container pt-5">
         <div class="card">
             <div class="card-header bg-info text-dark text-center">
-                Ingresar Estacion de servicio
+                Agregar Estacion de servicio
             </div>
-            <div class="card-body">
+            <div class="card-body m-3">
                 <!--ID -->
                 <div class="form-group">
-                    <label for="idEstacionNumb">Id de estacion:</label>
+                    <label for="idEstacionNumb">Id de estacion</label>
                     <asp:TextBox ID="idEstacionNumb" runat="server" CssClass="form-control"></asp:TextBox>
                 </div>
 
@@ -31,13 +31,13 @@
 
                 <!--CAPACIDAD-->
                 <div class="form-group">
-                    <label for="capNumb">Capacidad Maxima:</label>
+                    <label for="capNumb">Capacidad Maxima</label>
                     <asp:TextBox ID="capNumb" runat="server" CssClass="form-control"></asp:TextBox>
                 </div>
                 <!--HORARIO ATENCION-->
                 <div class="form-group">
-                    <label for="fecha_esta">fecha:</label>
-                    <asp:Calendar runat="server"></asp:Calendar>
+                    <label for="horarioAtencion">Horario</label>
+                    <asp:TextBox ID="horarioAtencion" runat="server" CssClass="form-control"></asp:TextBox>
                 </div>
 
 

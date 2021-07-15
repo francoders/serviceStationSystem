@@ -46,6 +46,7 @@ namespace SistemaEstacionesWeb.administracion
             idPc.Text = "";
             tipoRbl.SelectedIndex = 0;
             capMax.Text = "";
+            TextBoxRecibeFecha.Text = "";
         }
 
         protected void Calendar1_SelectionChanged(object sender, EventArgs e)
@@ -66,5 +67,6 @@ namespace SistemaEstacionesWeb.administracion
                 Calendar1.Visible = true;
             }   
         }
+
     }
 }

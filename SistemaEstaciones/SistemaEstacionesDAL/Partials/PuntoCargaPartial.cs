@@ -8,7 +8,7 @@ namespace SistemaEstacionesDAL
 {
     public partial class PuntoCarga
     {
-        public String TipoTxt
+        public String TipoCarga
         {
             get
             {
