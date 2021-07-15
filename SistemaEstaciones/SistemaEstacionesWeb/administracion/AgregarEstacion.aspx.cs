@@ -32,22 +32,26 @@ namespace SistemaEstacionesWeb.administracion
 
         protected void ingresarBtn_Click(object sender, EventArgs e)
         {
-            String idEstacion = idEstacionNumb.Text.Trim();
-            String direccion = DireccionTxt.Text.Trim();
-            String codigoRegion = regionDdl.SelectedValue;
-            Int32 capacidadMax = Convert.ToInt32(capNumb.Text);
-            
-            EstacionServicio es = new EstacionServicio();
+            if (!Page.IsValid)
+            {
+                String idEstacion = idEstacionNumb.Text.Trim();
+                String direccion = DireccionTxt.Text.Trim();
+                String codigoRegion = regionDdl.SelectedValue;
+                Int32 capacidadMax = Convert.ToInt32(capNumb.Text); //se cae al ingresar texto
 
-            es.IdEstacionServicio = idEstacion;
-            es.Direccion = direccion;
-            es.CodRegion = codigoRegion;
-            es.CapacidadMax = capacidadMax;
+                EstacionServicio es = new EstacionServicio();
 
-            new EstacionServicioDAL().Add(es);
+                es.IdEstacionServicio = idEstacion;
+                es.Direccion = direccion;
+                es.CodRegion = codigoRegion;
+                es.CapacidadMax = capacidadMax;
 
-            alertIngreso.Text = "Estacion Agregada con exito!";
-            limpiarFormulario();
+                new EstacionServicioDAL().Add(es);
+
+                alertIngreso.Text = "Estacion Agregada con exito!";
+                limpiarFormulario();
+            }
+            Response.Redirect("VerEstaciones.aspx");
 
         }
 

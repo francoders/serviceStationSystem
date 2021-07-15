@@ -55,7 +55,7 @@
 
 
             </div>
-            <asp:Button ID="ingresarBtn" runat="server" Text="Ingresar estacion." CssClass="btn btn-dark" OnClick="ingresarBtn_Click" />
+            <asp:Button ID="ingresarBtn" runat="server" Text="Ingresar estacion." CssClass="w-25 m-auto btn btn-info" OnClick="ingresarBtn_Click" />
             <div>
                 <asp:Label ID="alertIngreso" runat="server" CssClass="text-success h3"></asp:Label>
             </div>

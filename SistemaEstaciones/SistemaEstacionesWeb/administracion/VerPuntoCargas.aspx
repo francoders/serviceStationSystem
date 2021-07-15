@@ -18,7 +18,10 @@
         <!-- Tabla -->
         <div class="mt-5">
             <asp:GridView ID="pcGrid" runat="server" AutoGenerateColumns="False"
-                CssClass="table table-hover bg-white" OnRowCommand="puntosGrid_RowCommand" EmptyDataText="No hay estaciones de servicio registradas" CellPadding="4" ForeColor="#333333" GridLines="None" OnSelectedIndexChanged="pcGrid_SelectedIndexChanged">
+                CssClass="table table-hover bg-white" OnRowCommand="puntosGrid_RowCommand" 
+                EmptyDataText="No hay estaciones de servicio registradas" 
+                CellPadding="4" ForeColor="#333333" GridLines="None" 
+                >
            
                 <AlternatingRowStyle BackColor="White" />
            
@@ -34,6 +37,13 @@
                                 CommandArgument= '<%# Eval("idPuntoCarga") %>' />
                         </ItemTemplate>
                     </asp:TemplateField>
+                    <asp:TemplateField>
+                        <ItemTemplate>
+                            <asp:Button CssClass="btn btn-primary" ID="Btn_2" runat="server" Text="Actualizar" CommandName="actualizar"
+                                OnClick="actualizarBtn_Click" />
+                        </ItemTemplate>
+                    </asp:TemplateField>
+
                 </Columns>
                 <EditRowStyle BackColor="#2461BF" />
                 <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />

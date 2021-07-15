@@ -6,6 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Windows.Forms;
 
 namespace SistemaEstacionesWeb.administracion
 {
@@ -39,6 +40,8 @@ namespace SistemaEstacionesWeb.administracion
                 alertRegistroPuntos.Text = "Punto de Carga Agregado con exito!";
                 limpiarFormulario();
             }
+            Response.Redirect("VerPuntoCargas.aspx");
+            
         }
 
         private void limpiarFormulario()
@@ -66,6 +69,30 @@ namespace SistemaEstacionesWeb.administracion
             {
                 Calendar1.Visible = true;
             }   
+        }
+
+        protected void actualizarPuntoBtn_Click(object sender, EventArgs e)
+        {
+           
+            {
+                Int32 tipo = Convert.ToInt32(tipoRbl.SelectedValue);
+                Int32 CapacidadMax = Convert.ToInt32(capMax.Text.Trim());
+                String fechaCaducidad = TextBoxRecibeFecha.Text.Trim();
+                
+                alertRegistroPuntos.Text = "Punto de Carga Actualizado con exito!";
+                limpiarFormulario();
+            }
+            Response.Redirect("VerPuntoCargas.aspx");
+        }
+
+        //solo numeros
+        private void textBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+                (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
         }
 
     }

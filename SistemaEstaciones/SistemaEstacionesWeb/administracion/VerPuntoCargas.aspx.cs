@@ -54,9 +54,10 @@ namespace SistemaEstacionesWeb.administracion
             }
         }
 
-        protected void pcGrid_SelectedIndexChanged(object sender, EventArgs e)
+        protected void actualizarBtn_Click(object sender, EventArgs e)
         {
-
+                Response.Redirect("AgregarPuntoCarga.aspx");
         }
+
     }
 }
