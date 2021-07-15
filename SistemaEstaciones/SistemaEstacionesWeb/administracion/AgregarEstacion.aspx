@@ -15,12 +15,20 @@
                 <div class="form-group">
                     <label for="idEstacionNumb">Id de estacion</label>
                     <asp:TextBox ID="idEstacionNumb" runat="server" CssClass="form-control"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="RFV_1" runat="server" 
+                        ErrorMessage="Debe Ingresar un ID" CssClass="text-danger" ControlToValidate="idEstacionNumb">
+
+                    </asp:RequiredFieldValidator>
                 </div>
 
                 <!--DIRECCION -->
                 <div class="form-group">
                     <label for="DireccionTxt">Direccion</label>
                     <asp:TextBox ID="DireccionTxt" runat="server" CssClass="form-control"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="RFV_2" runat="server" 
+                        ErrorMessage="Debe Ingresar una direccion" CssClass="text-danger" ControlToValidate="DireccionTxt">
+
+                    </asp:RequiredFieldValidator>
                 </div>
 
                 <!--REGION -->
@@ -33,6 +41,11 @@
                 <div class="form-group">
                     <label for="capNumb">Capacidad Maxima</label>
                     <asp:TextBox ID="capNumb" runat="server" CssClass="form-control"></asp:TextBox>
+
+                    <asp:RequiredFieldValidator ID="RFV_3" runat="server" 
+                        ErrorMessage="Debe Ingresar la capacidad maxima" CssClass="text-danger" ControlToValidate="capNumb">
+
+                    </asp:RequiredFieldValidator>
                 </div>
                 <!--HORARIO ATENCION-->
                 <div class="form-group">

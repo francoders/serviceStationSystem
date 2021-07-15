@@ -35,8 +35,7 @@ namespace SistemaEstacionesWeb.administracion
             String idEstacion = idEstacionNumb.Text.Trim();
             String direccion = DireccionTxt.Text.Trim();
             String codigoRegion = regionDdl.SelectedValue;
-            int capNumb = '0';
-            Int32 capacidadMax = Convert.ToInt32(capNumb);
+            Int32 capacidadMax = Convert.ToInt32(capNumb.Text);
             
             EstacionServicio es = new EstacionServicio();
 
@@ -57,7 +56,7 @@ namespace SistemaEstacionesWeb.administracion
             //valida solo numeros
             if (System.Text.RegularExpressions.Regex.IsMatch(idEstacionNumb.Text,"[0-1000]"))
             {
-                idEstacionNumb.Text = "";
+                
             }
         }
 
@@ -65,7 +64,7 @@ namespace SistemaEstacionesWeb.administracion
         {
             idEstacionNumb.Text = " ";
             DireccionTxt.Text = " ";
-
+            capNumb.Text = " ";
         }
 
     }
