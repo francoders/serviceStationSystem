@@ -26,14 +26,19 @@ namespace SistemaEstacionesDAL.DAL
             puntoCargas.Remove(puntoCarga);
         }
 
-        public void Update(String idPuntoCarga) //actualizar punto
-        {
 
+        public PuntoCarga Update(String idPuntoCarga) //actualizar punto
+        {
+            return puntoCargas.Find(pc => pc.IdPuntoCarga == idPuntoCarga);
         }
 
         public List<PuntoCarga> GetAll(int tipo) //filtro
         {
             return puntoCargas.FindAll(pc => pc.Tipo == tipo);
         }
+
+
+
+
     }
 }

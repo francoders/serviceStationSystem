@@ -6,24 +6,42 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using System.Windows.Forms;
 
 namespace SistemaEstacionesWeb.administracion
 {
-    public partial class AgregarPuntoCarga : System.Web.UI.Page
+    public partial class Actualizar : System.Web.UI.Page
     {
+
+        //Igual que registrar pero en actualizar
+
+        PuntoCargaDAL puntoCargaDAL = new PuntoCargaDAL();
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
+            if (Page.IsValid)
             {
-                //IMG click calendario
-                Calendar1.Visible = false;
+                String idPuntoCarga = idPc.Text.Trim();
+                Int32 tipo = Convert.ToInt32(tipoRbl.SelectedValue);
+                Int32 CapacidadMax = Convert.ToInt32(capMax.Text.Trim());
+                String fechaCaducidad = TextBoxRecibeFecha.Text.Trim();
+
+                 
+                PuntoCarga pc = new PuntoCarga();
+                pc.IdPuntoCarga = idPuntoCarga;
+                pc.Tipo = tipo;
+                pc.CapacidadMaxVehiculos = CapacidadMax;
+                pc.FechaReemplazo = fechaCaducidad;
+
+                new PuntoCargaDAL().Add(pc);
+                alertRegistroPuntos.Text = "Punto de Carga Agregado con exito!";
+                limpiarFormulario();
             }
+            Response.Redirect("VerPuntoCargas.aspx");
         }
 
         protected void ingresarPuntoBtn_Click(object sender, EventArgs e)
         {
-            if(Page.IsValid)
+            if (Page.IsValid)
             {
                 String idPuntoCarga = idPc.Text.Trim();
                 Int32 tipo = Convert.ToInt32(tipoRbl.SelectedValue);
@@ -42,7 +60,7 @@ namespace SistemaEstacionesWeb.administracion
                 limpiarFormulario();
             }
             Response.Redirect("VerPuntoCargas.aspx");
-            
+
         }
 
         private void limpiarFormulario()
@@ -69,32 +87,25 @@ namespace SistemaEstacionesWeb.administracion
             else
             {
                 Calendar1.Visible = true;
-            }   
+            }
         }
 
         protected void actualizarPuntoBtn_Click(object sender, EventArgs e)
         {
-           
+
             {
                 Int32 tipo = Convert.ToInt32(tipoRbl.SelectedValue);
                 Int32 CapacidadMax = Convert.ToInt32(capMax.Text.Trim());
                 String fechaCaducidad = TextBoxRecibeFecha.Text.Trim();
-                
+
                 alertRegistroPuntos.Text = "Punto de Carga Actualizado con exito!";
                 limpiarFormulario();
             }
             Response.Redirect("VerPuntoCargas.aspx");
         }
 
-        //solo numeros
-        private void textBox_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
-                (e.KeyChar != '.'))
-            {
-                e.Handled = true;
-            }
-        }
+
+
 
     }
 }
