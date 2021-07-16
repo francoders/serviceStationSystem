@@ -47,15 +47,20 @@
 
                     </asp:RequiredFieldValidator>
                 </div>
+
                 <!--HORARIO ATENCION-->
                 <div class="form-group">
                     <label for="horarioAtencion">Horario</label>
-                    <asp:TextBox ID="horarioAtencion" runat="server" CssClass="form-control"></asp:TextBox>
+                    <asp:TextBox ID="idHorarioAtencion" runat="server" CssClass="form-control"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="RFV_4" runat="server"
+                        ErrorMessage="Debe Ingresar un Horario de Atencion" CssClass="text-danger" ControlToValidate="idHorarioAtencion">
+
+                    </asp:RequiredFieldValidator>
                 </div>
 
 
             </div>
-            <asp:Button ID="ingresarBtn" runat="server" Text="Ingresar estacion." CssClass="w-25 m-auto btn btn-info" OnClick="ingresarBtn_Click" />
+            <asp:Button ID="ingresarBtn" runat="server" Text="Agregar Estacion" CssClass="btn btn-dark" OnClick="ingresarBtn_Click" />
             <div>
                 <asp:Label ID="alertIngreso" runat="server" CssClass="text-success h3"></asp:Label>
             </div>

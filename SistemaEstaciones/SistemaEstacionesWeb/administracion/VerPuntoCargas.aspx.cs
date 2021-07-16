@@ -27,7 +27,7 @@ namespace SistemaEstacionesWeb.administracion
             }
         }
 
-        protected void puntosGrid_RowCommand(object sender, GridViewCommandEventArgs e)
+        protected void puntoCargasGrid_RowCommand(object sender, GridViewCommandEventArgs e)
         {
             if(e.CommandName == "eliminar")
             {

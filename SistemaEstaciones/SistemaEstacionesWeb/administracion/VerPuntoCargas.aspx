@@ -18,8 +18,8 @@
         <!-- Tabla -->
         <div class="mt-5">
             <asp:GridView ID="pcGrid" runat="server" AutoGenerateColumns="False"
-                CssClass="table table-hover bg-white" OnRowCommand="puntosGrid_RowCommand" 
-                EmptyDataText="No hay estaciones de servicio registradas" 
+                CssClass="table table-hover bg-white" OnRowCommand="puntoCargasGrid_RowCommand" 
+                EmptyDataText="NO HAY PUNTOS DE CARGAS REGISTRADOS" 
                 CellPadding="4" ForeColor="#333333" GridLines="None" 
                 >
            

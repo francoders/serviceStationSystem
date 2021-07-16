@@ -54,7 +54,6 @@
 
             </div>
             <asp:Button ID="ingresarPuntoBtn" runat="server" Text="Ingresar Punto de carga." CssClass="w-25 m-auto btn btn-info" OnClick="ingresarPuntoBtn_Click" />
-            <asp:Button ID="Btn_2" runat="server" Text="Actualizar Punto de carga" CssClass="w-25 btn btn-primary m-auto"  OnClick="actualizarPuntoBtn_Click" />
             <asp:Label ID="alertRegistroPuntos" runat="server" CssClass="text-success h3 align-content-center"></asp:Label>
         </div>
     </div>

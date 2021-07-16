@@ -6,7 +6,7 @@
         <div class="mt-5">
             
             <asp:GridView ID="estacionesGrid" runat="server" AutoGenerateColumns="False"
-                CssClass="table table-hover bg-white" OnRowCommand="estacionesGrid_RowCommand" EmptyDataText="No hay estaciones de servicio registradas" CellPadding="4" ForeColor="#333333" GridLines="None">
+                CssClass="table table-hover bg-white" OnRowCommand="estacionesGrid_RowCommand" EmptyDataText="NO HAY ESTACIONES DE SERVICIO REGISTRADAS" CellPadding="4" ForeColor="#333333" GridLines="None">
            
                 <AlternatingRowStyle BackColor="White" />
            
@@ -15,6 +15,7 @@
                     <asp:BoundField HeaderText="Direccion" DataField="Direccion" />
                     <asp:BoundField HeaderText="Region" DataField="CodRegion" />
                     <asp:BoundField HeaderText="Capacidad" DataField="CapacidadMax" />
+                    <asp:BoundField HeaderText="Horario Atencion" DataField="HorarioAtencion" />
 
                     <asp:TemplateField>
                         <ItemTemplate>

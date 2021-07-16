@@ -32,27 +32,24 @@ namespace SistemaEstacionesWeb.administracion
 
         protected void ingresarBtn_Click(object sender, EventArgs e)
         {
-            if (!Page.IsValid)
-            {
-                String idEstacion = idEstacionNumb.Text.Trim();
-                String direccion = DireccionTxt.Text.Trim();
-                String codigoRegion = regionDdl.SelectedValue;
-                Int32 capacidadMax = Convert.ToInt32(capNumb.Text); //se cae al ingresar texto
+            String idEstacion = idEstacionNumb.Text.Trim();
+            String direccion = DireccionTxt.Text.Trim();
+            String codigoRegion = regionDdl.SelectedValue;
+            Int32 capacidadMax = Convert.ToInt32(capNumb.Text);
+            String hAtencion = idHorarioAtencion.Text.Trim();
 
-                EstacionServicio es = new EstacionServicio();
+            EstacionServicio es = new EstacionServicio();
 
-                es.IdEstacionServicio = idEstacion;
-                es.Direccion = direccion;
-                es.CodRegion = codigoRegion;
-                es.CapacidadMax = capacidadMax;
+            es.IdEstacionServicio = idEstacion;
+            es.Direccion = direccion;
+            es.CodRegion = codigoRegion;
+            es.CapacidadMax = capacidadMax;
+            es.HorarioAtencion = hAtencion;
 
-                new EstacionServicioDAL().Add(es);
+            new EstacionServicioDAL().Add(es);
 
-                alertIngreso.Text = "Estacion Agregada con exito!";
-                limpiarFormulario();
-            }
-            Response.Redirect("VerEstaciones.aspx");
-
+            alertIngreso.Text = "Estacion Ingresada con exito!";
+            limpiarFormulario();
         }
 
         private void onlyNumbers(object sender,EventArgs e)
@@ -69,6 +66,7 @@ namespace SistemaEstacionesWeb.administracion
             idEstacionNumb.Text = " ";
             DireccionTxt.Text = " ";
             capNumb.Text = " ";
+            idHorarioAtencion.Text = " ";
         }
 
     }
