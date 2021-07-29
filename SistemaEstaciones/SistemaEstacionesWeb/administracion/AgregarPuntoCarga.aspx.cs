@@ -1,5 +1,6 @@
 ﻿using SistemaEstacionesDAL;
 using SistemaEstacionesDAL.DAL;
+using SistEstacionDatos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,7 +32,7 @@ namespace SistemaEstacionesWeb.administracion
                 String fechaCaducidad = TextBoxRecibeFecha.Text.Trim();
 
 
-                PuntoCarga pc = new PuntoCarga();
+                Puntocarga pc = new Puntocarga();
                 pc.IdPuntoCarga = idPuntoCarga;
                 pc.Tipo = tipo;
                 pc.CapacidadMaxVehiculos = CapacidadMax;

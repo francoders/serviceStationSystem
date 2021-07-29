@@ -1,5 +1,6 @@
 ﻿using SistemaEstacionesDAL;
 using SistemaEstacionesDAL.DAL;
+using SistEstacionDatos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,7 +14,7 @@ namespace SistemaEstacionesWeb.administracion
     {
         PuntoCargaDAL puntoCargaDAL = new PuntoCargaDAL();
 
-        private void CargarTabla(List<PuntoCarga> puntoCargas)
+        private void CargarTabla(List<Puntocarga> puntoCargas)
         {
             pcGrid.DataSource = puntoCargas;
             pcGrid.DataBind();
