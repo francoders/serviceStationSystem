@@ -1,5 +1,6 @@
 ﻿using SistemaEstacionesDAL;
 using SistemaEstacionesDAL.DAL;
+using SistEstacionDatos;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -44,7 +45,7 @@ namespace SistemaEstacionesWeb.administracion
             es.Direccion = direccion;
             es.CodRegion = codigoRegion;
             es.CapacidadMax = capacidadMax;
-            es.HorarioAtencion = hAtencion;
+            es.HorarioAtencio = hAtencion;
 
             new EstacionServicioDAL().Add(es);
 
