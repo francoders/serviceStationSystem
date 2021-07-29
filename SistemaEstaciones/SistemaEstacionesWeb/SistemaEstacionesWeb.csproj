@@ -144,9 +144,9 @@
     <Content Include="Web.sitemap" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\SistemaEstacionesDAL\SistemaEstacionesDAL.csproj">
-      <Project>{c90acedf-9949-4365-a755-756587f1684d}</Project>
-      <Name>SistemaEstacionesDAL</Name>
+    <ProjectReference Include="..\SistEstacionDatos\SistEstacionDatos.csproj">
+      <Project>{FEA37C4A-621F-4196-89B5-3838F0772E1B}</Project>
+      <Name>SistEstacionDatos</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
