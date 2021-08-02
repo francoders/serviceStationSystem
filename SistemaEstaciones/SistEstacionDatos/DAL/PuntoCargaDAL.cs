@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SistemaEstacionesDAL.DAL
+namespace SistEstacionDatos
 {
     public class PuntoCargaDAL
     {

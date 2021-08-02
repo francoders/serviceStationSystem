@@ -1,5 +1,4 @@
-﻿using SistemaEstacionesDAL;
-using SistemaEstacionesDAL.DAL;
+﻿
 using SistEstacionDatos;
 using System;
 using System.Collections;
@@ -14,21 +13,21 @@ namespace SistemaEstacionesWeb.administracion
     public partial class AgregarEstacion : System.Web.UI.Page
     {
 
-        protected void Page_Load(object sender, EventArgs e)
-        {
-            if (!IsPostBack)
-            {
-                List<Region> regiones = new RegionesDAL().GetAll();
-                regionDdl.DataSource = regiones;
+        //protected void Page_Load(object sender, EventArgs e)
+        //{
+          //  if (!IsPostBack)
+            //{
+              //  List<Region> regiones = new RegionesDAL().GetAll();
+                //regionDdl.DataSource = regiones;
                 //rellena la lista regiones
-                regionDdl.DataTextField = "NombreRegion";
+                //regionDdl.DataTextField = "NombreRegion";
                 // <option> .... </option>
-                regionDdl.DataValueField = "CodigoRegion";
+                //regionDdl.DataValueField = "CodigoRegion";
                 // <option value='1'> .... </option>
-                regionDdl.DataBind();
-            }
+                //regionDdl.DataBind();
+            //}
 
-        }
+        //}
 
 
         protected void ingresarBtn_Click(object sender, EventArgs e)
