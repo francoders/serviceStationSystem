@@ -25,8 +25,9 @@ namespace SistEstacionDatos
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<EstacionServicio> EstacionServicio { get; set; }
+        public virtual DbSet<Estacionservicio> Estacionservicio { get; set; }
         public virtual DbSet<Puntocarga> Puntocarga { get; set; }
         public virtual DbSet<Region> Region { get; set; }
+        public virtual DbSet<Tipo> Tipo { get; set; }
     }
 }

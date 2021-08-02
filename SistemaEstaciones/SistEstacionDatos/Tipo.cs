@@ -12,18 +12,18 @@ namespace SistEstacionDatos
     using System;
     using System.Collections.Generic;
     
-    public partial class Region
+    public partial class Tipo
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Region()
+        public Tipo()
         {
-            this.Estacionservicio = new HashSet<Estacionservicio>();
+            this.Puntocarga = new HashSet<Puntocarga>();
         }
     
-        public string NombreRegion { get; set; }
-        public string CodigoRegion { get; set; }
+        public string Tipo1 { get; set; }
+        public string CodigoTipo { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Estacionservicio> Estacionservicio { get; set; }
+        public virtual ICollection<Puntocarga> Puntocarga { get; set; }
     }
 }

@@ -40,9 +40,9 @@ namespace SistemaEstacionesWeb.administracion
 
         protected void tipoDdl_SelectedIndexChange(object sender, EventArgs e)
         {
-            int tipoSel = Convert.ToInt32(tipoDdl.SelectedValue);
+            String tipoSel = tipoDdl.SelectedValue;
 
-            List<PuntoCarga> filtrar = puntoCargaDAL.GetAll(tipoSel);
+            List<Puntocarga> filtrar = puntoCargaDAL.GetAll(tipoSel);
             CargarTabla(filtrar);
         }
 

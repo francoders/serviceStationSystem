@@ -39,13 +39,13 @@ namespace SistemaEstacionesWeb.administracion
             Int32 capacidadMax = Convert.ToInt32(capNumb.Text);
             String hAtencion = idHorarioAtencion.Text.Trim();
 
-            EstacionServicio es = new EstacionServicio();
+            Estacionservicio es = new Estacionservicio();
 
             es.IdEstacionServicio = idEstacion;
             es.Direccion = direccion;
             es.CodRegion = codigoRegion;
             es.CapacidadMax = capacidadMax;
-            es.HorarioAtencio = hAtencion;
+            es.HorarioAtencion = hAtencion;
 
             new EstacionServicioDAL().Add(es);
 

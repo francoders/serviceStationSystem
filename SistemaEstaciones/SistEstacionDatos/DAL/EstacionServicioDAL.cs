@@ -13,21 +13,21 @@ namespace SistemaEstacionesDAL.DAL
         //conexion a BD 
         public BDsistEstacionesEntities dbEntites = new BDsistEstacionesEntities();
 
-        public void Add(EstacionServicio es) //Agregar Estacion
+        public void Add(Estacionservicio es) //Agregar Estacion
         {
-            dbEntites.EstacionServicio.Add(es);
+            dbEntites.Estacionservicio.Add(es);
             dbEntites.SaveChanges(); // equivalente a commit para guardar
         }
 
-        public List<EstacionServicio> GetAll() //Mostrar Estacion
+        public List<Estacionservicio> GetAll() //Mostrar Estacion
         {
-            return dbEntites.EstacionServicio.ToList();
+            return dbEntites.Estacionservicio.ToList();
         }
 
         public void Remove(String idEstacionServicio) //Remover Estacion
         {
-            EstacionServicio es = dbEntites.EstacionServicio.Find(idEstacionServicio);
-            dbEntites.EstacionServicio.Remove(es);
+            Estacionservicio es = dbEntites.Estacionservicio.Find(idEstacionServicio);
+            dbEntites.Estacionservicio.Remove(es);
             dbEntites.SaveChanges();
         }
 

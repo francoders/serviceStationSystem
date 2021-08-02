@@ -12,13 +12,13 @@ namespace SistEstacionDatos
     using System;
     using System.Collections.Generic;
     
-    public partial class EstacionServicio
+    public partial class Estacionservicio
     {
         public string IdEstacionServicio { get; set; }
         public string Direccion { get; set; }
         public string CodRegion { get; set; }
         public int CapacidadMax { get; set; }
-        public string HorarioAtencio { get; set; }
+        public string HorarioAtencion { get; set; }
     
         public virtual Region Region { get; set; }
     }

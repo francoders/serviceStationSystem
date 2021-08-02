@@ -27,14 +27,14 @@ namespace SistemaEstacionesWeb.administracion
             if(Page.IsValid)
             {
                 String idPuntoCarga = idPc.Text.Trim();
-                Int32 tipo = Convert.ToInt32(tipoRbl.SelectedValue);
+                String tipo = tipoRbl.SelectedValue;
                 Int32 CapacidadMax = Convert.ToInt32(capMax.Text.Trim());
                 String fechaCaducidad = TextBoxRecibeFecha.Text.Trim();
 
 
                 Puntocarga pc = new Puntocarga();
                 pc.IdPuntoCarga = idPuntoCarga;
-                pc.Tipo = tipo;
+                pc.CodTipo = tipo;
                 pc.CapacidadMaxVehiculos = CapacidadMax;
                 pc.FechaReemplazo = fechaCaducidad;
 

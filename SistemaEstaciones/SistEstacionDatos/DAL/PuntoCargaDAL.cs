@@ -36,12 +36,12 @@ namespace SistemaEstacionesDAL.DAL
             return dbEntites.Puntocarga.Find(idPuntoCarga);
         }
 
-        public List<Puntocarga> GetAll(int tipo) //filtro
+        public List<Puntocarga> GetAll(String codTipo) //filtro
         {
             //LINQ generar query personalizada
             //Filtro 
             var query = from p in dbEntites.Puntocarga
-                        where p.Tipo == tipo
+                        where p.CodTipo == codTipo
                         select p;
             return query.ToList();
         }

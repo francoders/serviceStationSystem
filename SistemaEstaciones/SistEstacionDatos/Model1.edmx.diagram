@@ -4,11 +4,13 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="5e411efbf055459ba71e3143296b9037" Name="Diagram1">
-        <EntityTypeShape EntityType="BDsistEstacionesModel.EstacionServicio" Width="1.5" PointX="3" PointY="0.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="BDsistEstacionesModel.Puntocarga" Width="1.5" PointX="0.875" PointY="3.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="BDsistEstacionesModel.Region" Width="1.5" PointX="0.75" PointY="1.25" IsExpanded="true" />
+      <Diagram DiagramId="f7dd9510dcec4216a72a6eee017a1214" Name="Diagram1">
+        <EntityTypeShape EntityType="BDsistEstacionesModel.Estacionservicio" Width="1.5" PointX="5.125" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDsistEstacionesModel.Puntocarga" Width="1.5" PointX="3" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDsistEstacionesModel.Region" Width="1.5" PointX="7.25" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDsistEstacionesModel.Tipo" Width="1.5" PointX="0.75" PointY="1.125" IsExpanded="true" />
         <AssociationConnector Association="BDsistEstacionesModel.fk_estacionservicio_region" ManuallyRouted="false" />
+        <AssociationConnector Association="BDsistEstacionesModel.fk_puntocarga_tipo" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

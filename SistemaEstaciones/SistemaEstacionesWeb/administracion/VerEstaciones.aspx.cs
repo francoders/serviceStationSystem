@@ -14,7 +14,7 @@ namespace SistemaEstacionesWeb.administracion
     {
         EstacionServicioDAL estacionServicioDAL = new EstacionServicioDAL();
 
-        private void CargarTabla(List<EstacionServicio> estaciones)
+        private void CargarTabla(List<Estacionservicio> estaciones)
         {
             estacionesGrid.DataSource = estaciones;
             estacionesGrid.DataBind();

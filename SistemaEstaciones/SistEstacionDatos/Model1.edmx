@@ -5,7 +5,7 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
       <Schema Namespace="BDsistEstacionesModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityType Name="EstacionServicio">
+        <EntityType Name="Estacionservicio">
           <Key>
             <PropertyRef Name="IdEstacionServicio" />
           </Key>
@@ -13,14 +13,14 @@
           <Property Name="Direccion" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="CodRegion" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="CapacidadMax" Type="int" Nullable="false" />
-          <Property Name="HorarioAtencio" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="HorarioAtencion" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="Puntocarga">
           <Key>
             <PropertyRef Name="IdPuntoCarga" />
           </Key>
           <Property Name="IdPuntoCarga" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="Tipo" Type="int" Nullable="false" />
+          <Property Name="CodTipo" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="CapacidadMaxVehiculos" Type="int" Nullable="false" />
           <Property Name="FechaReemplazo" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
@@ -31,25 +31,49 @@
           <Property Name="NombreRegion" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="CodigoRegion" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
+        <EntityType Name="Tipo">
+          <Key>
+            <PropertyRef Name="CodigoTipo" />
+          </Key>
+          <Property Name="Tipo" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="CodigoTipo" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
         <Association Name="fk_estacionservicio_region">
           <End Role="Region" Type="Self.Region" Multiplicity="1" />
-          <End Role="EstacionServicio" Type="Self.EstacionServicio" Multiplicity="*" />
+          <End Role="Estacionservicio" Type="Self.Estacionservicio" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Region">
               <PropertyRef Name="CodigoRegion" />
             </Principal>
-            <Dependent Role="EstacionServicio">
+            <Dependent Role="Estacionservicio">
               <PropertyRef Name="CodRegion" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="fk_puntocarga_tipo">
+          <End Role="Tipo" Type="Self.Tipo" Multiplicity="1" />
+          <End Role="Puntocarga" Type="Self.Puntocarga" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tipo">
+              <PropertyRef Name="CodigoTipo" />
+            </Principal>
+            <Dependent Role="Puntocarga">
+              <PropertyRef Name="CodTipo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="BDsistEstacionesModelStoreContainer">
-          <EntitySet Name="EstacionServicio" EntityType="Self.EstacionServicio" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Estacionservicio" EntityType="Self.Estacionservicio" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Puntocarga" EntityType="Self.Puntocarga" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Region" EntityType="Self.Region" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tipo" EntityType="Self.Tipo" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="fk_estacionservicio_region" Association="Self.fk_estacionservicio_region">
             <End Role="Region" EntitySet="Region" />
-            <End Role="EstacionServicio" EntitySet="EstacionServicio" />
+            <End Role="Estacionservicio" EntitySet="Estacionservicio" />
+          </AssociationSet>
+          <AssociationSet Name="fk_puntocarga_tipo" Association="Self.fk_puntocarga_tipo">
+            <End Role="Tipo" EntitySet="Tipo" />
+            <End Role="Puntocarga" EntitySet="Puntocarga" />
           </AssociationSet>
         </EntityContainer>
       </Schema>
@@ -57,7 +81,7 @@
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="BDsistEstacionesModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="EstacionServicio">
+        <EntityType Name="Estacionservicio">
           <Key>
             <PropertyRef Name="IdEstacionServicio" />
           </Key>
@@ -65,17 +89,18 @@
           <Property Name="Direccion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="CodRegion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="CapacidadMax" Type="Int32" Nullable="false" />
-          <Property Name="HorarioAtencio" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="Region" Relationship="Self.fk_estacionservicio_region" FromRole="EstacionServicio" ToRole="Region" />
+          <Property Name="HorarioAtencion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Region" Relationship="Self.fk_estacionservicio_region" FromRole="Estacionservicio" ToRole="Region" />
         </EntityType>
         <EntityType Name="Puntocarga">
           <Key>
             <PropertyRef Name="IdPuntoCarga" />
           </Key>
           <Property Name="IdPuntoCarga" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Tipo" Type="Int32" Nullable="false" />
+          <Property Name="CodTipo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="CapacidadMaxVehiculos" Type="Int32" Nullable="false" />
           <Property Name="FechaReemplazo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Tipo" Relationship="Self.fk_puntocarga_tipo" FromRole="Puntocarga" ToRole="Tipo" />
         </EntityType>
         <EntityType Name="Region">
           <Key>
@@ -83,27 +108,52 @@
           </Key>
           <Property Name="NombreRegion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="CodigoRegion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="EstacionServicio" Relationship="Self.fk_estacionservicio_region" FromRole="Region" ToRole="EstacionServicio" />
+          <NavigationProperty Name="Estacionservicio" Relationship="Self.fk_estacionservicio_region" FromRole="Region" ToRole="Estacionservicio" />
+        </EntityType>
+        <EntityType Name="Tipo">
+          <Key>
+            <PropertyRef Name="CodigoTipo" />
+          </Key>
+          <Property Name="Tipo1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CodigoTipo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Puntocarga" Relationship="Self.fk_puntocarga_tipo" FromRole="Tipo" ToRole="Puntocarga" />
         </EntityType>
         <Association Name="fk_estacionservicio_region">
           <End Role="Region" Type="Self.Region" Multiplicity="1" />
-          <End Role="EstacionServicio" Type="Self.EstacionServicio" Multiplicity="*" />
+          <End Role="Estacionservicio" Type="Self.Estacionservicio" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Region">
               <PropertyRef Name="CodigoRegion" />
             </Principal>
-            <Dependent Role="EstacionServicio">
+            <Dependent Role="Estacionservicio">
               <PropertyRef Name="CodRegion" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="fk_puntocarga_tipo">
+          <End Role="Tipo" Type="Self.Tipo" Multiplicity="1" />
+          <End Role="Puntocarga" Type="Self.Puntocarga" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tipo">
+              <PropertyRef Name="CodigoTipo" />
+            </Principal>
+            <Dependent Role="Puntocarga">
+              <PropertyRef Name="CodTipo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="BDsistEstacionesEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="EstacionServicio" EntityType="Self.EstacionServicio" />
+          <EntitySet Name="Estacionservicio" EntityType="Self.Estacionservicio" />
           <EntitySet Name="Puntocarga" EntityType="Self.Puntocarga" />
           <EntitySet Name="Region" EntityType="Self.Region" />
+          <EntitySet Name="Tipo" EntityType="Self.Tipo" />
           <AssociationSet Name="fk_estacionservicio_region" Association="Self.fk_estacionservicio_region">
             <End Role="Region" EntitySet="Region" />
-            <End Role="EstacionServicio" EntitySet="EstacionServicio" />
+            <End Role="Estacionservicio" EntitySet="Estacionservicio" />
+          </AssociationSet>
+          <AssociationSet Name="fk_puntocarga_tipo" Association="Self.fk_puntocarga_tipo">
+            <End Role="Tipo" EntitySet="Tipo" />
+            <End Role="Puntocarga" EntitySet="Puntocarga" />
           </AssociationSet>
         </EntityContainer>
       </Schema>
@@ -112,14 +162,14 @@
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="BDsistEstacionesModelStoreContainer" CdmEntityContainer="BDsistEstacionesEntities">
-          <EntitySetMapping Name="EstacionServicio">
-            <EntityTypeMapping TypeName="BDsistEstacionesModel.EstacionServicio">
-              <MappingFragment StoreEntitySet="EstacionServicio">
+          <EntitySetMapping Name="Estacionservicio">
+            <EntityTypeMapping TypeName="BDsistEstacionesModel.Estacionservicio">
+              <MappingFragment StoreEntitySet="Estacionservicio">
                 <ScalarProperty Name="IdEstacionServicio" ColumnName="IdEstacionServicio" />
                 <ScalarProperty Name="Direccion" ColumnName="Direccion" />
                 <ScalarProperty Name="CodRegion" ColumnName="CodRegion" />
                 <ScalarProperty Name="CapacidadMax" ColumnName="CapacidadMax" />
-                <ScalarProperty Name="HorarioAtencio" ColumnName="HorarioAtencio" />
+                <ScalarProperty Name="HorarioAtencion" ColumnName="HorarioAtencion" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -127,7 +177,7 @@
             <EntityTypeMapping TypeName="BDsistEstacionesModel.Puntocarga">
               <MappingFragment StoreEntitySet="Puntocarga">
                 <ScalarProperty Name="IdPuntoCarga" ColumnName="IdPuntoCarga" />
-                <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+                <ScalarProperty Name="CodTipo" ColumnName="CodTipo" />
                 <ScalarProperty Name="CapacidadMaxVehiculos" ColumnName="CapacidadMaxVehiculos" />
                 <ScalarProperty Name="FechaReemplazo" ColumnName="FechaReemplazo" />
               </MappingFragment>
@@ -138,6 +188,14 @@
               <MappingFragment StoreEntitySet="Region">
                 <ScalarProperty Name="NombreRegion" ColumnName="NombreRegion" />
                 <ScalarProperty Name="CodigoRegion" ColumnName="CodigoRegion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tipo">
+            <EntityTypeMapping TypeName="BDsistEstacionesModel.Tipo">
+              <MappingFragment StoreEntitySet="Tipo">
+                <ScalarProperty Name="Tipo1" ColumnName="Tipo" />
+                <ScalarProperty Name="CodigoTipo" ColumnName="CodigoTipo" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

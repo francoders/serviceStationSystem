@@ -15,8 +15,10 @@ namespace SistEstacionDatos
     public partial class Puntocarga
     {
         public string IdPuntoCarga { get; set; }
-        public int Tipo { get; set; }
+        public string CodTipo { get; set; }
         public int CapacidadMaxVehiculos { get; set; }
         public string FechaReemplazo { get; set; }
+    
+        public virtual Tipo Tipo { get; set; }
     }
 }
